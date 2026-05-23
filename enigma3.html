@@ -10,6 +10,7 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      
       font-family: Arial, sans-serif;
     }
 
@@ -38,9 +39,30 @@
   <div class="container">
 
     <img src="ima3.gif" width="700">
+    <img src="ima33.png" width="50"
+    style="position:absolute; left:50px; top:50%; transform: rotate(0deg);">
+    <img src="ima33.png" width="50"
+    style="position:absolute; left:50px; top:58%; transform: rotate(0deg);">
+    <img src="ima33.png" width="50"
+    style="position:absolute; left:50px; top:66%; transform: rotate(0deg);">
+    <img src="ima33.png" width="50"
+    style="position:absolute; left:50px; top:74%; transform: rotate(0deg);">
+    <img src="ima33.png" width="50"
+    style="position:absolute; left:50px; top:82%; transform: rotate(0deg);">
+    <img src="ima33.png" width="50"
+    style="position:absolute; left:50px; bottom:50%; transform: rotate(0deg);">
+    <img src="ima33.png" width="50"
+    style="position:absolute; left:50px; bottom:58%; transform: rotate(0deg);">
+    <img src="ima22.png" width="50"
+    style="position:absolute; left:50px; bottom:66%; transform: rotate(0deg);">
+    <img src="ima22.png" width="50"
+    style="position:absolute; left:50px; bottom:74%; transform: rotate(0deg);">
+    <img src="ima22.png" width="50"
+    style="position:absolute; left:50px; bottom:82%; transform: rotate(0deg);">
+    
 
     <h2></h2>
-    <p>Se você é boa de memória então... 20</p>
+    <p>Um dia você decorou ele, a resposta são 15 dele</p>
 
     <input type="text" id="resposta" placeholder="Digite sua resposta">
     <br>
@@ -54,7 +76,7 @@
         .toLowerCase()
         .trim();
 
-      if (resposta === "3,14159265358979323846") {
+      if (resposta === "3,14159265358979" || resposta === "314159265358979") {
         window.location.href = "enigma4.html";
       } else {
         alert("❌ Resposta errada, tenta de novo!");

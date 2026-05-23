@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>E se você arrastar?</title>
+
+<style>
+
+body{
+background:#f1f1f1;
+margin:0;
+height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+font-family:Arial;
+}
+
+/* area do puzzle */
+
+.puzzle{
+position:relative;
+width:480px;
+height:480px;
+margin-bottom:40px;
+}
+
+/* peças */
+
+.peca{
+width:120px;
+height:120px;
+position:absolute;
+cursor:grab;
+user-select:none;
+}
+
+/* input */
+
+input {
+      padding: 8px;
+      width: 200px;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 2px;
+      padding: 8px 15px;
+    }
+
+</style>
+</head>
+
+<body>
+<img src="ima22.png" width="50"
+    style="position:absolute; left:50px; top:50%; transform: rotate(0deg);">
+    <img src="ima22.png" width="50"
+    style="position:absolute; left:50px; top:58%; transform: rotate(0deg);">
+    <img src="ima22.png" width="50"
+    style="position:absolute; left:50px; top:66%; transform: rotate(0deg);">
+    <img src="ima22.png" width="50"
+    style="position:absolute; left:50px; top:74%; transform: rotate(0deg);">
+    <img src="ima33.png" width="50"
+    style="position:absolute; left:50px; top:82%; transform: rotate(0deg);">
+    <img src="ima22.png" width="50"
+    style="position:absolute; left:50px; bottom:50%; transform: rotate(0deg);">
+    <img src="ima22.png" width="50"
+    style="position:absolute; left:50px; bottom:58%; transform: rotate(0deg);">
+    <img src="ima22.png" width="50"
+    style="position:absolute; left:50px; bottom:66%; transform: rotate(0deg);">
+    <img src="ima22.png" width="50"
+    style="position:absolute; left:50px; bottom:74%; transform: rotate(0deg);">
+    <img src="ima22.png" width="50"
+    style="position:absolute; left:50px; bottom:82%; transform: rotate(0deg);">
+<div class="puzzle">
+
+<img src="1.png" class="peca" style="top:0px; left:0px;">
+<img src="2.png" class="peca" style="top:0px; left:120px;">
+<img src="3.png" class="peca" style="top:0px; left:240px;">
+<img src="4.png" class="peca" style="top:0px; left:360px;">
+
+<img src="5.png" class="peca" style="top:120px; left:0px;">
+<img src="6.png" class="peca" style="top:120px; left:120px;">
+<img src="7.png" class="peca" style="top:120px; left:240px;">
+<img src="8.png" class="peca" style="top:120px; left:360px;">
+
+<img src="9.png" class="peca" style="top:240px; left:0px;">
+<img src="10.png" class="peca" style="top:240px; left:120px;">
+<img src="11.png" class="peca" style="top:240px; left:240px;">
+<img src="12.png" class="peca" style="top:240px; left:360px;">
+
+<img src="13.png" class="peca" style="top:360px; left:0px;">
+<img src="14.png" class="peca" style="top:360px; left:120px;">
+<img src="15.png" class="peca" style="top:360px; left:240px;">
+<img src="16.png" class="peca" style="top:360px; left:360px;">
+
+</div>
+
+<input type="text" id="resposta" placeholder="Digite sua resposta">
+<br>
+<button onclick="verificar()">Confirmar</button>
+
+<script>
+
+/* mover peças */
+
+let pecaSelecionada = null
+let offsetX = 0
+let offsetY = 0
+
+document.querySelectorAll(".peca").forEach(peca=>{
+
+peca.addEventListener("mousedown",(e)=>{
+
+pecaSelecionada = peca
+offsetX = e.clientX - peca.offsetLeft
+offsetY = e.clientY - peca.offsetTop
+
+})
+
+})
+
+document.addEventListener("mousemove",(e)=>{
+
+if(pecaSelecionada){
+
+pecaSelecionada.style.left = (e.clientX - offsetX) + "px"
+pecaSelecionada.style.top = (e.clientY - offsetY) + "px"
+
+}
+
+})
+
+document.addEventListener("mouseup",()=>{
+
+pecaSelecionada = null
+
+})
+
+/* sistema de resposta */
+
+function verificar(){
+
+const resposta = document
+.getElementById("resposta")
+.value
+.toLowerCase()
+.trim()
+
+if(resposta === "kath s2 ruan" || resposta === "kaths2ruan"){
+
+window.location.href = "enigma10.html"
+
+}else{
+
+alert("❌ Resposta errada, tenta de novo!")
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

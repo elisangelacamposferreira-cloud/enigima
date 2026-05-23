@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Distancia</title>
+
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    img {
+      margin-bottom: 20px;
+    }
+
+    input {
+      padding: 8px;
+      width: 200px;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 8px 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="ima22.png" width="50"
+    style="position:absolute; left:50px; top:50%; transform: rotate(0deg);">
+    <img src="ima22.png" width="50"
+    style="position:absolute; left:50px; top:58%; transform: rotate(0deg);">
+    <img src="ima22.png" width="50"
+    style="position:absolute; left:50px; top:66%; transform: rotate(0deg);">
+    <img src="ima33.png" width="50"
+    style="position:absolute; left:50px; top:74%; transform: rotate(0deg);">
+    <img src="ima33.png" width="50"
+    style="position:absolute; left:50px; top:82%; transform: rotate(0deg);">
+    <img src="ima22.png" width="50"
+    style="position:absolute; left:50px; bottom:50%; transform: rotate(0deg);">
+    <img src="ima22.png" width="50"
+    style="position:absolute; left:50px; bottom:58%; transform: rotate(0deg);">
+    <img src="ima22.png" width="50"
+    style="position:absolute; left:50px; bottom:66%; transform: rotate(0deg);">
+    <img src="ima22.png" width="50"
+    style="position:absolute; left:50px; bottom:74%; transform: rotate(0deg);">
+    <img src="ima22.png" width="50"
+    style="position:absolute; left:50px; bottom:82%; transform: rotate(0deg);">
+  <div class="container">
+
+    <img src="ima8.png" width="700">
+
+    <h2>?són e ...mK84 é B asac arap A asac ad eS</h2>
+    <p>(numero inteiro sem virgulas)</p>
+
+    <input type="text" id="resposta" placeholder="Digite sua resposta">
+    <br>
+    <button onclick="verificar()">Confirmar</button>
+
+  </div>
+
+  <script>
+    function verificar() {
+      const resposta = document.getElementById("resposta").value
+        .toLowerCase()
+        .trim();
+
+      if (resposta === "202km" || resposta === "202") {
+        window.location.href = "enigma9.html";
+      } else {
+        alert("❌ Resposta errada, tenta de novo!");
+      }
+    }
+  </script>
+</body>
+</html>
