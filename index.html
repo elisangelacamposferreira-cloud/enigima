@@ -1,65 +1,127 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Enigma 1</title>
+<meta charset="UTF-8">
+<title>Enigma</title>
 
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: Arial, sans-serif;
-    }
+<style>
 
-    .container {
-      text-align: center;
-    }
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-image:url("fundo.jpg");
+    background-size:cover;
+    font-family:Arial;
+}
 
-    img {
-      margin-bottom: 20px;
-    }
+.container{
+    text-align:center;
+    background-color:rgba(255, 255, 255, 0.6);
+    padding:40px;
+    border-radius:10px;
+}
 
-    input {
-      padding: 8px;
-      width: 200px;
-      text-align: center;
-    }
+h1{
+    color:rgb(0, 0, 0);
+    font-size:50px;
+    margin-bottom:30px;
+}
 
-    button {
-      margin-top: 10px;
-      padding: 8px 15px;
-    }
-  </style>
+button{
+    font-size:22px;
+    padding:12px 30px;
+    margin:10px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.comecar{
+    background-color:#272727;
+}
+
+.regras{
+    background-color:#730606;
+}
+
+/* painel de regras */
+
+#painelRegras{
+    position:fixed;
+    right:-400px;
+    top:0;
+    width:350px;
+    height:100%;
+    background-color:#111;
+    color:white;
+    padding:30px;
+    transition:0.5s;
+}
+
+#painelRegras.ativo{
+    right:0;
+}
+
+</style>
 </head>
 
 <body>
-  <div class="container">
+<img src="ima15.png" width="200"
+    style="position:absolute; left:130px; top:100px; transform: rotate(-10deg);">
+    <img src="ima16.png" width="150"
+    style="position:absolute; right:130px; top:100px; transform: rotate(10deg);">
+    <img src="ima17.png" width="200"
+    style="position:absolute; left:100px; top:430px; transform: rotate(-10deg);">
+    <img src="ima19.png" width="200"
+    style="position:absolute; right:100px; top:430px; transform: rotate(10deg);">
+    <img src="ima18.png" width="130"
+    style="position:absolute; left:260px; top:450px; transform: rotate(-7deg);">
+    <img src="ima20.png" width="300"
+    style="position:absolute; right:180px; top:450px; transform: rotate(7deg);">
+<div class="container">
 
-    <img src="pista2.jpg" width="200">
+<h1>O ENIGMA DO RATO</h1>
 
-    <h2>🧩 Enigma 1</h2>
-    <p>Qaul meu nome?</p>
+<button class="comecar" onclick="comecar()">Começar</button>
 
-    <input type="text" id="resposta" placeholder="Digite sua resposta">
-    <br>
-    <button onclick="verificar()">Confirmar</button>
+<button class="regras" onclick="toggleRegras()">Regras</button>
 
-  </div>
+</div>
 
-  <script>
-    function verificar() {
-      const resposta = document.getElementById("resposta").value
-        .toLowerCase()
-        .trim();
+<div id="painelRegras">
 
-      if (resposta === "ruan") {
-        window.location.href = "enigma2.html";
-      } else {
-        alert("❌ Resposta errada, tenta de novo!");
-      }
-    }
-  </script>
+<h2>Regras</h2>
+
+<p>
+1 - As resposta são todas em minúsculo.<br><br>
+
+2 - O nome da pagina pode indicar uma dica.<br><br>
+
+3 - Não trapaceie<br><br>
+
+4 - Pense fora da caixa<br><br>
+
+5 - Voçe tem conhecimento de todas as respostas.<br><br>
+
+6 - Divirta-se s2
+</p>
+
+</div>
+
+<script>
+
+function comecar(){
+    window.location.href = "Aprimeira.html";
+}
+
+function toggleRegras(){
+    document.getElementById("painelRegras").classList.toggle("ativo");
+}
+
+</script>
+
 </body>
 </html>
