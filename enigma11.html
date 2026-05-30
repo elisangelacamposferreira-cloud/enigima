@@ -19,7 +19,38 @@ body{
 .mensagem{
     text-align:center;
     color:#000000;
+}
+
+h1{
     font-size:40px;
+}
+
+p{
+    font-size:22px;
+}
+
+button{
+    margin-top:20px;
+    padding:15px 30px;
+    font-size:18px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    background-color:#000000;
+    color:white;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+#video{
+    display:none;
+    margin-top:30px;
+}
+
+video{
+    border-radius:15px;
 }
 
 </style>
@@ -29,8 +60,24 @@ body{
 <body>
 
 <div class="mensagem">
-    🎉 Parabéns, você completou o enigma!!! 🎉
+    <h1>🎉 Parabéns! 🎉</h1>
+    <p>Você completou o enigma.</p>
+    <p>Seu prêmio está logo abaixo ❤️</p>
+
+    <button onclick="mostrarVideo()">Receber prêmio</button>
+
+    <div id="video">
+        <video width="300" controls>
+            <source src="video.mp4" type="video/mp4">
+        </video>
+    </div>
 </div>
+
+<script>
+function mostrarVideo() {
+    document.getElementById("video").style.display = "block";
+}
+</script>
 
 </body>
 </html>
